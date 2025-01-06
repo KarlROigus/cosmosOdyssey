@@ -1,0 +1,78 @@
+@page
+@using System.Globalization
+@model Flights
+
+<h3>Filter by Company</h3>
+<form method="get">
+    <label for="CompanyFilter">Company Name:</label>
+    <input type="text" id="CompanyFilter" name="Company" value="@Model.Company" placeholder="Enter Company Name" />
+    
+    <input type="hidden" name="Source" value="@Model.Source" />
+    <input type="hidden" name="Destination" value="@Model.Destination" />
+
+    <button type="submit" class="btn btn-secondary">Filter</button>
+</form>
+
+<div id="sortButtons">
+    <form method="get">
+        <input type="hidden" name="Source" value="@Model.Source" />
+        <input type="hidden" name="Destination" value="@Model.Destination" />
+        <button type="submit" name="SortBy" value="Price" class="btn btn-primary mb-3">Sort by Price</button>
+    </form>
+    <form method="get">
+        <input type="hidden" name="Source" value="@Model.Source" />
+        <input type="hidden" name="Destination" value="@Model.Destination" />
+        <button type="submit" name="SortBy" value="Time" class="btn btn-primary mb-3">Sort by Time</button>
+    </form>
+</div>
+
+
+
+@if (!Model.PossibleFlights.Any())
+{
+    <p>No flights available for this route.</p>
+    <form method="get" asp-page="/Index">
+        <button type="submit">Go Back</button>
+    </form>
+}
+else
+{
+    <div class="row">
+        @foreach (var leg in Model.PossibleFlights)
+        {
+            foreach (var provider in leg.Providers!)
+            {
+                if (string.IsNullOrEmpty(Model.Company) || provider.Company.Name.Contains(Model.Company, StringComparison.OrdinalIgnoreCase))
+                {
+                    <div class="col-md-3 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">@leg.RouteInfo.From.Name to @leg.RouteInfo.To.Name</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">@provider.Company.Name</h6>
+                                <p class="card-text">
+                                    <strong>Price:</strong> @provider.Price.ToString("C", CultureInfo.CurrentCulture) <br>
+                                    <strong>Flight Start:</strong> @provider.FlightStart <br>
+                                    <strong>Flight End:</strong> @provider.FlightEnd <br>
+                                    <strong>Distance:</strong> @leg.RouteInfo.Distance km
+                                </p>
+
+                                <form id="selectBtnForm" method="get" asp-page="/ReserveFlight">
+                                    <input type="hidden" name="Source" value="@leg.RouteInfo.From.Name" />
+                                    <input type="hidden" name="Destination" value="@leg.RouteInfo.To.Name" />
+                                    <input type="hidden" name="CompanyName" value="@provider.Company.Name" />
+                                    <input type="hidden" name="Price" value="@provider.Price" />
+                                    <input type="hidden" name="FlightStart" value="@provider.FlightStart" />
+                                    <input type="hidden" name="FlightEnd" value="@provider.FlightEnd" />
+                                    <input type="hidden" name="Distance" value="@leg.RouteInfo.Distance" />
+
+                                    <button type="submit" class="btn btn-primary">Select</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        }
+    </div>
+}
+

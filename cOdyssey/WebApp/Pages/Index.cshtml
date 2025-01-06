@@ -1,10 +1,45 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Cosmos Odyssey";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h3>Select your source planet!</h3>
+
+<form method="get">
+    <label for="source">Choose a planet:</label>
+    <select id="source" name="Source" onchange="this.form.submit()">
+        <option value="" disabled selected>Select a planet</option>
+        @foreach (var planet in Model.Planets)
+        {
+            var isSelected = planet.Id == Model.Source;
+            @if (isSelected)
+            {
+                <option value="@planet.Id" selected>@planet.Name</option>
+            }
+            else
+            {
+                <option value="@planet.Id">@planet.Name</option>
+            }
+            
+        }
+    </select>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Source))
+{
+    <h3>Select your destination planet!</h3>
+    <form method="get">
+        <input type="hidden" name="Source" value="@Model.Source" />
+        <label for="destination">Choose a planet:</label>
+        <select id="destination" name="Destination" onchange="this.form.submit()">
+            <option value="" disabled selected>Select a planet</option>
+            @foreach (var planet in Model.Planets)
+            {
+                <option value="@planet.Id">
+                    @planet.Name
+                </option>
+            }
+        </select>
+    </form>
+}

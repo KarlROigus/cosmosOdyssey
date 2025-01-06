@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YQStLtaq82n5xUFdrjXEIlvR2nCwXaZt/Z86O7uPT0Q=",
+  "Hash": "ja7i628XcSI5FYpVkm00X+ZNxKl62oqhWZ631m0hvmg=",
   "Source": "WebApp",
   "BasePath": "_content/WebApp",
   "Mode": "Default",
@@ -542,12 +542,12 @@
       "OriginalItemSpec": "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/WebApp/wwwroot/lib/jquery/dist/jquery.min.js"
     },
     {
-      "Identity": "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-lugek5hnai.gz",
+      "Identity": "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-jqs48wo6rl.gz",
       "SourceId": "WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/WebApp/obj/Debug/net9.0/compressed/",
       "BasePath": "_content/WebApp",
-      "RelativePath": "css/site#[.{fingerprint=lugek5hnai}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=jqs48wo6rl}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -556,8 +556,8 @@
       "RelatedAsset": "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/WebApp/wwwroot/css/site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "fap03slvfg",
-      "Integrity": "B2NcGeycNm1fppl5ueYw/SoIaM1eiU6mnFitSmrq4lY=",
+      "Fingerprint": "la11p49807",
+      "Integrity": "zZWR/ZToZMdywCh5P4VfjY1FpwFK40kuonhajt1MAtE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/WebApp/wwwroot/css/site.css"
@@ -1417,8 +1417,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "lugek5hnai",
-      "Integrity": "zeR5PHeeHbxfGkL8WV86OzdoF6UnjuCmnagaocD+cbo=",
+      "Fingerprint": "jqs48wo6rl",
+      "Integrity": "e/Lio9qRWHFC7jxVKco7jDocq+cdSNaLbtuB5FYDlGs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
@@ -2729,12 +2729,12 @@
   "Endpoints": [
     {
       "Route": "css/site.css",
-      "AssetFile": "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-lugek5hnai.gz",
+      "AssetFile": "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-jqs48wo6rl.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.003194888179"
+          "Quality": "0.002123142251"
         }
       ],
       "ResponseHeaders": [
@@ -2744,15 +2744,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "312"
+          "Value": "470"
         },
         {
           "Name": "ETag",
-          "Value": "\"B2NcGeycNm1fppl5ueYw/SoIaM1eiU6mnFitSmrq4lY=\""
+          "Value": "\"zZWR/ZToZMdywCh5P4VfjY1FpwFK40kuonhajt1MAtE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 06 Jan 2025 09:05:50 GMT"
+          "Value": "Mon, 06 Jan 2025 09:31:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2772,13 +2772,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"zeR5PHeeHbxfGkL8WV86OzdoF6UnjuCmnagaocD+cbo=\""
+          "Value": "W/\"e/Lio9qRWHFC7jxVKco7jDocq+cdSNaLbtuB5FYDlGs=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-zeR5PHeeHbxfGkL8WV86OzdoF6UnjuCmnagaocD+cbo="
+          "Value": "sha256-e/Lio9qRWHFC7jxVKco7jDocq+cdSNaLbtuB5FYDlGs="
         }
       ]
     },
@@ -2793,7 +2793,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "637"
+          "Value": "1007"
         },
         {
           "Name": "Content-Type",
@@ -2801,11 +2801,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"zeR5PHeeHbxfGkL8WV86OzdoF6UnjuCmnagaocD+cbo=\""
+          "Value": "\"e/Lio9qRWHFC7jxVKco7jDocq+cdSNaLbtuB5FYDlGs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 06 Jan 2025 09:05:50 GMT"
+          "Value": "Mon, 06 Jan 2025 09:31:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2815,13 +2815,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-zeR5PHeeHbxfGkL8WV86OzdoF6UnjuCmnagaocD+cbo="
+          "Value": "sha256-e/Lio9qRWHFC7jxVKco7jDocq+cdSNaLbtuB5FYDlGs="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-lugek5hnai.gz",
+      "AssetFile": "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-jqs48wo6rl.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2830,7 +2830,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "312"
+          "Value": "470"
         },
         {
           "Name": "Content-Type",
@@ -2838,11 +2838,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"B2NcGeycNm1fppl5ueYw/SoIaM1eiU6mnFitSmrq4lY=\""
+          "Value": "\"zZWR/ZToZMdywCh5P4VfjY1FpwFK40kuonhajt1MAtE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 06 Jan 2025 09:05:50 GMT"
+          "Value": "Mon, 06 Jan 2025 09:31:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2860,18 +2860,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-B2NcGeycNm1fppl5ueYw/SoIaM1eiU6mnFitSmrq4lY="
+          "Value": "sha256-zZWR/ZToZMdywCh5P4VfjY1FpwFK40kuonhajt1MAtE="
         }
       ]
     },
     {
-      "Route": "css/site.lugek5hnai.css",
-      "AssetFile": "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-lugek5hnai.gz",
+      "Route": "css/site.jqs48wo6rl.css",
+      "AssetFile": "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-jqs48wo6rl.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.003194888179"
+          "Quality": "0.002123142251"
         }
       ],
       "ResponseHeaders": [
@@ -2881,15 +2881,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "312"
+          "Value": "470"
         },
         {
           "Name": "ETag",
-          "Value": "\"B2NcGeycNm1fppl5ueYw/SoIaM1eiU6mnFitSmrq4lY=\""
+          "Value": "\"zZWR/ZToZMdywCh5P4VfjY1FpwFK40kuonhajt1MAtE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 06 Jan 2025 09:05:50 GMT"
+          "Value": "Mon, 06 Jan 2025 09:31:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2909,13 +2909,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"zeR5PHeeHbxfGkL8WV86OzdoF6UnjuCmnagaocD+cbo=\""
+          "Value": "W/\"e/Lio9qRWHFC7jxVKco7jDocq+cdSNaLbtuB5FYDlGs=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "lugek5hnai"
+          "Value": "jqs48wo6rl"
         },
         {
           "Name": "label",
@@ -2923,12 +2923,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-zeR5PHeeHbxfGkL8WV86OzdoF6UnjuCmnagaocD+cbo="
+          "Value": "sha256-e/Lio9qRWHFC7jxVKco7jDocq+cdSNaLbtuB5FYDlGs="
         }
       ]
     },
     {
-      "Route": "css/site.lugek5hnai.css",
+      "Route": "css/site.jqs48wo6rl.css",
       "AssetFile": "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/WebApp/wwwroot/css/site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2938,7 +2938,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "637"
+          "Value": "1007"
         },
         {
           "Name": "Content-Type",
@@ -2946,11 +2946,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"zeR5PHeeHbxfGkL8WV86OzdoF6UnjuCmnagaocD+cbo=\""
+          "Value": "\"e/Lio9qRWHFC7jxVKco7jDocq+cdSNaLbtuB5FYDlGs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 06 Jan 2025 09:05:50 GMT"
+          "Value": "Mon, 06 Jan 2025 09:31:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2960,7 +2960,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "lugek5hnai"
+          "Value": "jqs48wo6rl"
         },
         {
           "Name": "label",
@@ -2968,13 +2968,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-zeR5PHeeHbxfGkL8WV86OzdoF6UnjuCmnagaocD+cbo="
+          "Value": "sha256-e/Lio9qRWHFC7jxVKco7jDocq+cdSNaLbtuB5FYDlGs="
         }
       ]
     },
     {
-      "Route": "css/site.lugek5hnai.css.gz",
-      "AssetFile": "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-lugek5hnai.gz",
+      "Route": "css/site.jqs48wo6rl.css.gz",
+      "AssetFile": "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-jqs48wo6rl.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2983,7 +2983,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "312"
+          "Value": "470"
         },
         {
           "Name": "Content-Type",
@@ -2991,11 +2991,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"B2NcGeycNm1fppl5ueYw/SoIaM1eiU6mnFitSmrq4lY=\""
+          "Value": "\"zZWR/ZToZMdywCh5P4VfjY1FpwFK40kuonhajt1MAtE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 06 Jan 2025 09:05:50 GMT"
+          "Value": "Mon, 06 Jan 2025 09:31:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3013,7 +3013,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "lugek5hnai"
+          "Value": "jqs48wo6rl"
         },
         {
           "Name": "label",
@@ -3021,7 +3021,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-B2NcGeycNm1fppl5ueYw/SoIaM1eiU6mnFitSmrq4lY="
+          "Value": "sha256-zZWR/ZToZMdywCh5P4VfjY1FpwFK40kuonhajt1MAtE="
         }
       ]
     },
