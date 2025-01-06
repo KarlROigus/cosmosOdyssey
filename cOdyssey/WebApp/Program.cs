@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var vamosAasdd = "";
+var vamosAasddz = "";
 var databasePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "app.db");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
