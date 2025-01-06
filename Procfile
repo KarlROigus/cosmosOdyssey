@@ -1,1 +1,1 @@
-web: dotnet WebApp/bin/Debug/net9.0/WebApp.dll
+web: dotnet WebApp/obj/Release/net9.0/linux-x64/WebApp.dll

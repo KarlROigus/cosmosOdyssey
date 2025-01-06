@@ -13,7 +13,6 @@
         "packagesPath": "/Users/karlrudolf/.nuget/packages/",
         "outputPath": "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/DAL/obj/",
         "projectStyle": "PackageReference",
-        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "/Users/karlrudolf/.nuget/NuGet/NuGet.Config"
         ],
@@ -42,7 +41,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "all"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -91,6 +91,11 @@
           },
           "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
         }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
+        }
       }
     },
     "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/Domain/Domain.csproj": {
@@ -102,7 +107,6 @@
         "packagesPath": "/Users/karlrudolf/.nuget/packages/",
         "outputPath": "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/Domain/obj/",
         "projectStyle": "PackageReference",
-        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "/Users/karlrudolf/.nuget/NuGet/NuGet.Config"
         ],
@@ -127,7 +131,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "all"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -150,6 +155,11 @@
           },
           "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
         }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
+        }
       }
     },
     "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/WebApp/WebApp.csproj": {
@@ -161,7 +171,6 @@
         "packagesPath": "/Users/karlrudolf/.nuget/packages/",
         "outputPath": "/Users/karlrudolf/repos/cosmosOdyssey/cOdyssey/WebApp/obj/",
         "projectStyle": "PackageReference",
-        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "/Users/karlrudolf/.nuget/NuGet/NuGet.Config"
         ],
@@ -190,7 +199,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "all"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -214,6 +224,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[9.0.0, 9.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -223,6 +239,11 @@
             }
           },
           "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
         }
       }
     }
