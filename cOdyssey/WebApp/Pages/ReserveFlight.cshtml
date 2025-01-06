@@ -2,34 +2,42 @@
 @using System.Globalization
 @model WebApp.Pages.ReserveFlight
 
-<h3>Reserve Your Flight!</h3>
 
-<div>
-    <p><strong>Source:</strong> @Model.Source</p>
-    <p><strong>Destination:</strong> @Model.Destination</p>
-    <p><strong>Company Name:</strong> @Model.CompanyName</p>
-    <p><strong>Price:</strong> @Model.Price.ToString("C", CultureInfo.CurrentCulture)</p>
-    <p><strong>Distance:</strong> @Model.Distance.ToString("N0") km</p>
-</div>
+@if (!string.IsNullOrEmpty(Model.Error))
+{
+    @Model.Error;
+}
+else
+{
+    <h3>Reserve Your Flight!</h3>
 
-<form method="post">
-    <div class="mb-3">
-        <label for="FirstName" class="form-label">First Name</label>
-        <input type="text" id="FirstName" name="FirstName" class="form-control" required placeholder="Enter your first name" />
-    </div>
-    <div class="mb-3">
-        <label for="LastName" class="form-label">Last Name</label>
-        <input type="text" id="LastName" name="LastName" class="form-control" required placeholder="Enter your last name" />
+    <div>
+        <p><strong>Source:</strong> @Model.Source</p>
+        <p><strong>Destination:</strong> @Model.Destination</p>
+        <p><strong>Company Name:</strong> @Model.CompanyName</p>
+        <p><strong>Price:</strong> @Model.Price.ToString("C", CultureInfo.CurrentCulture)</p>
+        <p><strong>Distance:</strong> @Model.Distance.ToString("N0") km</p>
     </div>
 
-    <!-- Hidden Inputs to Preserve URL Data -->
-    <input type="hidden" name="Source" value="@Model.Source" />
-    <input type="hidden" name="Destination" value="@Model.Destination" />
-    <input type="hidden" name="CompanyName" value="@Model.CompanyName" />
-    <input type="hidden" name="Price" value="@Model.Price" />
-    <input type="hidden" name="FlightStart" value="@Model.FlightStart" />
-    <input type="hidden" name="FlightEnd" value="@Model.FlightEnd" />
-    <input type="hidden" name="Distance" value="@Model.Distance" />
+    <form method="post">
+        <div class="mb-3">
+            <label for="FirstName" class="form-label">First Name</label>
+            <input type="text" id="FirstName" name="FirstName" class="form-control" required placeholder="Enter your first name" />
+        </div>
+        <div class="mb-3">
+            <label for="LastName" class="form-label">Last Name</label>
+            <input type="text" id="LastName" name="LastName" class="form-control" required placeholder="Enter your last name" />
+        </div>
+        
+        <input type="hidden" name="Source" value="@Model.Source" />
+        <input type="hidden" name="Destination" value="@Model.Destination" />
+        <input type="hidden" name="CompanyName" value="@Model.CompanyName" />
+        <input type="hidden" name="Price" value="@Model.Price" />
+        <input type="hidden" name="FlightStart" value="@Model.FlightStart" />
+        <input type="hidden" name="FlightEnd" value="@Model.FlightEnd" />
+        <input type="hidden" name="Distance" value="@Model.Distance" />
 
-    <button type="submit" class="btn btn-primary">Reserve</button>
-</form>
+        <button type="submit" class="btn btn-primary">Reserve</button>
+    </form>
+}
+

@@ -1,3 +1,5 @@
+using System.Text.Json;
+using DAL;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -5,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 public class Flights : PageModel
 {
     private readonly HttpClient _httpClient;
+    private readonly AppDbContext _context;
 
     public ICollection<Leg> PossibleFlights { get; set; } = default!;
     
@@ -14,9 +17,11 @@ public class Flights : PageModel
     
     [BindProperty(SupportsGet = true)] public string SortBy { get; set; } = default!;
 
-    public Flights(HttpClient httpClient)
+    public Flights(HttpClient httpClient, AppDbContext context)
     {
         _httpClient = httpClient;
+        _context = context;
+
     }
 
     public async Task OnGetAsync()
@@ -71,11 +76,23 @@ public class Flights : PageModel
             var priceList = await _httpClient.GetFromJsonAsync<PriceList>(
                 "https://cosmosodyssey.azurewebsites.net/api/v1.0/TravelPrices"
             );
+
+            var currentPriceListId = priceList!.Id;
+            if (!_context.Apis.Any(each => each.ApiId == currentPriceListId))
+            {
+                var api = new API()
+                {
+                    ApiId = currentPriceListId,
+                    ApiJsonString = JsonSerializer.Serialize(priceList),
+                    ValidUntil = priceList.ValidUntil
+                };
+                _context.Apis.Add(api);
+                await _context.SaveChangesAsync();
+            }
             
             if (priceList != null && priceList.Legs != null)
             {
                 PossibleFlights = priceList.Legs;
-                
             }
             
         }

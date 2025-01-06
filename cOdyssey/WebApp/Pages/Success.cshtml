@@ -1,7 +1,12 @@
 @page
 @model WebApp.Pages.Success
 
-<p>Reservation added successfully! You can view your reservations from the menu above!</p>
+<div class="alert alert-success" role="alert">
+    <p>Reservation added successfully! You can view your reservations from the menu above!</p>
+</div>
+
 <form method="get" asp-page="/Index">
     <button type="submit">Return to main page</button>
 </form>
+
+    
