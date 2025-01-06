@@ -1,0 +1,40 @@
+@page
+@model WebApp.Pages.APIHistory
+
+<h2>API List</h2>
+
+@if (!Model.APIList.Any())
+{
+    <p>No APIs found.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>API ID</th>
+            <th>Valid Until</th>
+            <th>API JSON String</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var api in Model.APIList)
+        {
+            <tr>
+                <td>@api.ApiId</td>
+                <td>@api.ValidUntil.ToString("g")</td>
+                <td>
+                    @if (api.ApiJsonString.Length > 150)
+                    {
+                        @($"{api.ApiJsonString.Substring(0, 150)}...")
+                    }
+                    else
+                    {
+                        @api.ApiJsonString
+                    }
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

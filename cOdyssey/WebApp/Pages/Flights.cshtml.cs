@@ -80,14 +80,9 @@ public class Flights : PageModel
             var currentPriceListId = priceList!.Id;
             if (!_context.Apis.Any(each => each.ApiId == currentPriceListId))
             {
-                var api = new API()
-                {
-                    ApiId = currentPriceListId,
-                    ApiJsonString = JsonSerializer.Serialize(priceList),
-                    ValidUntil = priceList.ValidUntil
-                };
-                _context.Apis.Add(api);
-                await _context.SaveChangesAsync();
+                RemoveOldestApiIfNeeded();
+
+                await InsertNewApi(currentPriceListId, priceList);
             }
             
             if (priceList != null && priceList.Legs != null)
@@ -99,6 +94,30 @@ public class Flights : PageModel
         catch (Exception ex)
         {
             Console.WriteLine($"Error fetching data: {ex.Message}");
+        }
+    }
+
+    private async Task InsertNewApi(string currentPriceListId, PriceList priceList)
+    {
+        var api = new API()
+        {
+            ApiId = currentPriceListId,
+            ApiJsonString = JsonSerializer.Serialize(priceList),
+            ValidUntil = priceList.ValidUntil
+        };
+        _context.Apis.Add(api);
+        await _context.SaveChangesAsync();
+    }
+
+    private void RemoveOldestApiIfNeeded()
+    {
+        if (_context.Apis.Count() >= 15)
+        {
+            var oldestApi = _context.Apis.OrderBy(api => api.Id).FirstOrDefault();
+            if (oldestApi != null)
+            {
+                _context.Apis.Remove(oldestApi);
+            }
         }
     }
 }

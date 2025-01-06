@@ -7,10 +7,11 @@ public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
 {
     public AppDbContext CreateDbContext(string[] args)
     {
-        var connectionString = $"Data Source=/Users/karlrudolf/Desktop/Programmeerimine/app.db";
+        
+        var databasePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "app.db");
         
         var contextOptions = new DbContextOptionsBuilder<AppDbContext>()
-            .UseSqlite(connectionString)
+            .UseSqlite($"Data Source={databasePath}")
             .EnableDetailedErrors()
             .EnableSensitiveDataLogging()
             .Options;

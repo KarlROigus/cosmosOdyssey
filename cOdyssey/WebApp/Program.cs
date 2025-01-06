@@ -4,12 +4,11 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ??
-                       throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-
+var databasePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "app.db");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(connectionString));
+    options.UseSqlite($"Data Source={databasePath}"));
+
 
 // Add services to the container.
 builder.Services.AddRazorPages();
