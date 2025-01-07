@@ -47,27 +47,6 @@ public class ReserveFlight : PageModel
         
         public async Task<IActionResult> OnPostAsync()
         {
-            try
-            {
-                var priceList = await _httpClient.GetFromJsonAsync<PriceList>(
-                    "https://cosmosodyssey.azurewebsites.net/api/v1.0/TravelPrices"
-                );
-
-                var priceListValidUntil = priceList!.ValidUntil;
-                if (priceListValidUntil > DateTime.Now)
-                {
-                    Error = "The current price list expired. Please start again from the main menu!";
-                    return Page();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error fetching data: {ex.Message}");
-            }
-            
-            
-            
             
             var reservation = new Reservation
             {
@@ -77,8 +56,8 @@ public class ReserveFlight : PageModel
                 Destination = Destination,
                 CompanyName = CompanyName,
                 Price = Price,
-                FlightStart = DateTime.ParseExact(FlightStart, "dd.MM.yyyy HH:mm:ss", CultureInfo.InvariantCulture),
-                FlightEnd = DateTime.ParseExact(FlightEnd, "dd.MM.yyyy HH:mm:ss", CultureInfo.InvariantCulture),
+                FlightStart = DateTime.Parse(FlightStart),
+                FlightEnd = DateTime.Parse(FlightEnd),
                 Distance = Distance
             };
             

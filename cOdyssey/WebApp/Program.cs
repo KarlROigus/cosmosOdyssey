@@ -3,12 +3,10 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var vamosAasddz = "";
-var databasePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "app.db");
+var databasePath = Path.Combine(AppContext.BaseDirectory, "Data", "app.db");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite($"Data Source={databasePath}"));
-
 
 // Add services to the container.
 builder.Services.AddRazorPages();
@@ -27,6 +25,12 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseRouting();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapRazorPages();
+});
+
 
 app.UseAuthorization();
 
