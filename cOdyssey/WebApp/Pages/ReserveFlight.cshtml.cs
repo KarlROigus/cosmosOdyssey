@@ -47,6 +47,25 @@ public class ReserveFlight : PageModel
         
         public async Task<IActionResult> OnPostAsync()
         {
+            // try
+            // {
+            //     var priceList = await _httpClient.GetFromJsonAsync<PriceList>(
+            //         "https://cosmosodyssey.azurewebsites.net/api/v1.0/TravelPrices"
+            //     );
+            //
+            //     var priceListValidUntil = priceList!.ValidUntil;
+            //     if (priceListValidUntil < DateTime.Now.AddHours(-2))
+            //     {
+            //         Error = "The current price list expired. Please start again from the main menu!";
+            //         return Page();
+            //     }
+            //
+            // }
+            // catch (Exception ex)
+            // {
+            //     Console.WriteLine($"Error fetching data: {ex.Message}");
+            // }
+            
             
             var reservation = new Reservation
             {

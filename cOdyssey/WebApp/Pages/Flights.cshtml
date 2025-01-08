@@ -2,41 +2,39 @@
 @using System.Globalization
 @model Flights
 
-<h3>Filter by Company</h3>
-<form method="get">
-    <label for="CompanyFilter">Company Name:</label>
-    <input type="text" id="CompanyFilter" name="Company" value="@Model.Company" placeholder="Enter Company Name" />
-    
-    <input type="hidden" name="Source" value="@Model.Source" />
-    <input type="hidden" name="Destination" value="@Model.Destination" />
-
-    <button type="submit" class="btn btn-secondary">Filter</button>
-</form>
-
-<div id="sortButtons">
-    <form method="get">
-        <input type="hidden" name="Source" value="@Model.Source" />
-        <input type="hidden" name="Destination" value="@Model.Destination" />
-        <button type="submit" name="SortBy" value="Price" class="btn btn-primary mb-3">Sort by Price</button>
-    </form>
-    <form method="get">
-        <input type="hidden" name="Source" value="@Model.Source" />
-        <input type="hidden" name="Destination" value="@Model.Destination" />
-        <button type="submit" name="SortBy" value="Time" class="btn btn-primary mb-3">Sort by Time</button>
-    </form>
-</div>
-
-
 
 @if (!Model.PossibleFlights.Any())
 {
-    <p>No flights available for this route.</p>
+    <p>No flights available for this route. Please return to the main page to choose again!</p>
     <form method="get" asp-page="/Index">
         <button type="submit">Go Back</button>
     </form>
 }
 else
 {
+    <h3>Filter by Company</h3>
+    <form method="get">
+        <label for="CompanyFilter">Company Name:</label>
+        <input type="text" id="CompanyFilter" name="Company" value="@Model.Company" placeholder="Enter Company Name" />
+    
+        <input type="hidden" name="Source" value="@Model.Source" />
+        <input type="hidden" name="Destination" value="@Model.Destination" />
+
+        <button type="submit" class="btn btn-secondary">Filter</button>
+    </form>
+
+    <div id="sortButtons">
+        <form method="get">
+            <input type="hidden" name="Source" value="@Model.Source" />
+            <input type="hidden" name="Destination" value="@Model.Destination" />
+            <button type="submit" name="SortBy" value="Price" class="btn btn-primary mb-3">Sort by Price</button>
+        </form>
+        <form method="get">
+            <input type="hidden" name="Source" value="@Model.Source" />
+            <input type="hidden" name="Destination" value="@Model.Destination" />
+            <button type="submit" name="SortBy" value="Time" class="btn btn-primary mb-3">Sort by Time</button>
+        </form>
+    </div>
     <div class="row">
         @foreach (var leg in Model.PossibleFlights)
         {
@@ -50,7 +48,7 @@ else
                                 <h5 class="card-title">@leg.RouteInfo.From.Name to @leg.RouteInfo.To.Name</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">@provider.Company.Name</h6>
                                 <p class="card-text">
-                                    <strong>Price:</strong> @provider.Price.ToString("C", CultureInfo.CurrentCulture) <br>
+                                    <strong>Price:</strong> @provider.Price.ToString("0.00")€ <br>
                                     <strong>Flight Start:</strong> @provider.FlightStart <br>
                                     <strong>Flight End:</strong> @provider.FlightEnd <br>
                                     <strong>Distance:</strong> @leg.RouteInfo.Distance km

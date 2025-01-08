@@ -26,13 +26,15 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 
+app.UseAuthorization();
+
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapRazorPages();
 });
 
+Console.WriteLine(AppContext.BaseDirectory);
 
-app.UseAuthorization();
 
 app.MapStaticAssets();
 app.MapRazorPages()
