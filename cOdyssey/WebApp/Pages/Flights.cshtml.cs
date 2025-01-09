@@ -10,6 +10,8 @@ public class Flights : PageModel
     private readonly AppDbContext _context;
 
     public ICollection<Leg> PossibleFlights { get; set; } = default!;
+
+    public DateTime ValidUntil { get; set; }
     
     [BindProperty(SupportsGet = true)] public string Source { get; set; } = default!;
     [BindProperty(SupportsGet = true)] public string Destination { get; set; } = default!;
@@ -85,9 +87,10 @@ public class Flights : PageModel
                 await InsertNewApi(currentPriceListId, priceList);
             }
             
-            if (priceList != null && priceList.Legs != null)
+            if (priceList.Legs != null)
             {
                 PossibleFlights = priceList.Legs;
+                ValidUntil = priceList.ValidUntil;
             }
             
         }

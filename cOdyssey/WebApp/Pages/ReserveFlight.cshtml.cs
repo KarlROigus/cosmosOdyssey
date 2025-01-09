@@ -9,12 +9,10 @@ namespace WebApp.Pages;
 public class ReserveFlight : PageModel
     {
         private readonly AppDbContext _context;
-        private readonly HttpClient _httpClient;
         
-        public ReserveFlight(AppDbContext context, HttpClient httpClient)
+        public ReserveFlight(AppDbContext context)
         {
             _context = context;
-            _httpClient = httpClient;
         }
 
         [BindProperty(SupportsGet = true)] 
@@ -32,6 +30,8 @@ public class ReserveFlight : PageModel
         [BindProperty(SupportsGet = true)] public string FlightStart { get; set; } = default!;
 
         [BindProperty(SupportsGet = true)] public string FlightEnd { get; set; } = default!;
+        
+        [BindProperty(SupportsGet = true)] public string ValidUntil { get; set; } = default!;
 
         [BindProperty(SupportsGet = true)]
         public int Distance { get; set; }
@@ -47,25 +47,11 @@ public class ReserveFlight : PageModel
         
         public async Task<IActionResult> OnPostAsync()
         {
-            // try
-            // {
-            //     var priceList = await _httpClient.GetFromJsonAsync<PriceList>(
-            //         "https://cosmosodyssey.azurewebsites.net/api/v1.0/TravelPrices"
-            //     );
-            //
-            //     var priceListValidUntil = priceList!.ValidUntil;
-            //     if (priceListValidUntil < DateTime.Now.AddHours(-2))
-            //     {
-            //         Error = "The current price list expired. Please start again from the main menu!";
-            //         return Page();
-            //     }
-            //
-            // }
-            // catch (Exception ex)
-            // {
-            //     Console.WriteLine($"Error fetching data: {ex.Message}");
-            // }
-            
+            if (DateTime.Now > DateTime.Parse(ValidUntil))
+            {
+                Error = "The current price list expired. Please start again from the main menu!";
+                return Page();
+            }
             
             var reservation = new Reservation
             {
@@ -86,4 +72,5 @@ public class ReserveFlight : PageModel
             return RedirectToPage("./Success");
 
         }
+        
     }
